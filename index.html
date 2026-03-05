@@ -6,8 +6,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no"
     />
-    <title>元祖·三国华容道 · 电梯选关版</title>
-    <meta name="description" content="电梯楼层数字直接对应关卡，随机在关卡范围内" />
+    <title>元祖· 米歇尔华容道</title>
+    <meta name="description" content="BanGDream 米歇尔华容道" />
     <style>
       * {
         margin: 0;
@@ -511,7 +511,7 @@
         <img class="board-bg" src="images/board1.png" alt="棋盘背景" />
         <div id="elevator-floor">1</div> <!-- 电梯楼层数字 = 当前关卡编号 -->
 
-        <!-- 链接容器：原仓库 + fork仓库 + B站番剧 -->
+        <!-- 链接容器 -->
         <div class="repo-links">
           <!-- 原仓库链接 -->
           <a class="repo-link" href="https://github.com/fflow2023/BanGKlotski" target="_blank" rel="noopener">
@@ -528,7 +528,7 @@
             <span class="star-text">原项目:B站@心之流_</span>
           </a>
 
-          <!-- 你的 fork 仓库链接（请将 href 替换为你的实际地址） -->
+          <!-- fork 仓库链接 -->
           <a class="repo-link fork-link" href="https://github.com/KasumiAmi/BanGKlotski_Enhanced" target="_blank" rel="noopener">
             <svg viewBox="0 0 16 16">
               <path
@@ -543,7 +543,7 @@
             <span class="star-text">Fork:B站@千石Yuno酱</span>
           </a>
 
-          <!-- B站番剧链接（带粉色辉光） -->
+          <!-- B站链接-->
           <a class="repo-link bili-link" href="https://www.bilibili.com/bangumi/play/ss29308" target="_blank" rel="noopener">
             <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
               <path d="M8 5v14l11-7z"/>
@@ -564,12 +564,11 @@
           🎶角色音效
         </button>
 
-        <!-- 电梯楼层控件：直接控制关卡 (楼层数 = 关卡索引+1) -->
+        <!-- 电梯楼层控件 (楼层数 = 关卡索引+1) -->
         <div class="floor-control" style="flex-wrap:wrap; width:110px;">
           <input type="number" id="custom-floor" value="1" min="1" max="3" step="1" style="width:70px;">
           <button class="btn floor-btn" id="random-floor">随机</button>
         </div>
-        <!-- 不再需要独立下拉框，但保留一个只读提示（可选） -->
       </div>
     </div>
 
@@ -641,7 +640,7 @@
       });
 
       // ============================================================
-      // 数据模型 · 多关卡配置
+      // 关卡配置
       // ============================================================
       const COLS = 4;
       const ROWS = 5;
@@ -1002,7 +1001,7 @@
       const randomFloorBtn = document.getElementById("random-floor");
 
       // ============================================================
-      // 核心功能：电梯楼层 = 关卡编号 (1 ~ LEVELS.length)
+      // 电梯楼层 = 关卡编号 (1 ~ LEVELS.length)
       // ============================================================
       function getTotalLevels() {
         return LEVELS.length;
@@ -1073,7 +1072,7 @@
       });
 
       // ============================================================
-      // 渲染 & 工具函数 (基本不变)
+      // 渲染 & 工具函数
       // ============================================================
       function deepCloneLayout(layout) {
         return layout.map((b) => ({ ...b }));
@@ -1131,7 +1130,7 @@
       }
 
       // ============================================================
-      // 拖拽交互 (保持不变)
+      // 拖拽交互
       // ============================================================
       function startDrag(blockId, startX, startY) {
         if (solving) return;
@@ -1199,7 +1198,7 @@
       document.addEventListener("touchcancel", endDrag);
 
       // ============================================================
-      // 音效系统 (完全不变)
+      // 音效配置
       // ============================================================
       const audioCache = {};
       const CHARACTER_AUDIO_MAP = {
@@ -1283,7 +1282,7 @@
       }
 
       // ============================================================
-      // 碰撞检测与移动 (保持不变)
+      // 碰撞检测与移动
       // ============================================================
       function buildGrid(blocksState) {
         const grid = Array.from({ length: ROWS }, () => Array(COLS).fill(null));
@@ -1351,7 +1350,7 @@
       }
 
       // ============================================================
-      // 提示系统 (worker代码完全不变)
+      // 提示系统
       // ============================================================
       const workerCode = `
         const COLS = 4, ROWS = 5;
