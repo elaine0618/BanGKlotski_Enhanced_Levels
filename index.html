@@ -79,6 +79,17 @@
         padding: 5px;
         box-sizing: border-box;
       }
+	.qr-code {
+		position: absolute;
+		left: 4.4%;      /* 与电梯楼层左对齐 */
+		top: 50%;        /* 放在电梯楼层下方（电梯楼层在23%，这里放45%） */
+		width: 14%;      /* 与电梯楼层同宽 */
+		height: auto;    /* 自动调整高度保持比例 */
+		z-index: 5;      /* 确保在背景之上 */
+		pointer-events: none; /* 允许点击穿透，不影响游戏操作 */
+		opacity: 0.9;    /* 稍微透明，不要太抢眼 */
+		border-radius: 8px; /* 可选：圆角 */
+	}
       /* 桌面端字体固定大小 */
       @media (min-width: 781px) {
         #elevator-floor {
@@ -427,6 +438,14 @@
         .repo-link .star-text {
           display: none;
         }
+		
+		/* 移动端二维码调整 */
+		.qr-code {
+			width: 60px;    /* 移动端固定宽度 */
+			left: 10px;
+			top: auto;
+			bottom: 10px;
+		}
       }
 
       /* 更新日志弹窗样式 */
@@ -510,7 +529,7 @@
       <div id="board-inner">
         <img class="board-bg" src="images/board1.png" alt="棋盘背景" />
         <div id="elevator-floor">1</div> <!-- 电梯楼层数字 = 当前关卡编号 -->
-
+		<img src="testqr.png" class="qr-code" alt="testqr" />
         <!-- 链接容器 -->
         <div class="repo-links">
           <!-- 原仓库链接 -->
@@ -566,7 +585,7 @@
 
         <!-- 电梯楼层控件 (楼层数 = 关卡索引+1) -->
         <div class="floor-control" style="flex-wrap:wrap; width:110px;">
-          <input type="number" id="custom-floor" value="1" min="1" max="3" step="1" style="width:70px;">
+          <input type="number" id="custom-floor" value="1" min="1" max="18" step="1" style="width:70px;">
           <button class="btn floor-btn" id="random-floor">随机</button>
         </div>
       </div>
