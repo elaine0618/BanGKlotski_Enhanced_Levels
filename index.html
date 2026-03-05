@@ -79,16 +79,17 @@
         padding: 5px;
         box-sizing: border-box;
       }
+	  /* 测试用二维码 */
 	.qr-code {
 		position: absolute;
-		left: 4.4%;      /* 与电梯楼层左对齐 */
-		top: 50%;        /* 放在电梯楼层下方（电梯楼层在23%，这里放45%） */
-		width: 14%;      /* 与电梯楼层同宽 */
-		height: auto;    /* 自动调整高度保持比例 */
-		z-index: 5;      /* 确保在背景之上 */
-		pointer-events: none; /* 允许点击穿透，不影响游戏操作 */
-		opacity: 0.9;    /* 稍微透明，不要太抢眼 */
-		border-radius: 8px; /* 可选：圆角 */
+		left: 4.4%;
+		top: 50%;
+		width: 14%;
+		height: auto;
+		z-index: 5;
+		pointer-events: none;
+		opacity: 0.9;
+		border-radius: 8px;
 	}
       /* 桌面端字体固定大小 */
       @media (min-width: 781px) {
@@ -136,8 +137,8 @@
       /* 控制面板 — 右侧 */
       #control-panel {
         position: absolute;
-        top: 50%;
-        right: 2%;
+        top: 55%;
+        right: 5%;
         transform: translateY(-50%);
         display: flex;
         flex-direction: column;
