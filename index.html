@@ -597,7 +597,9 @@
       <div id="victory-box">
         <h2>🎉 通关成功！</h2>
         <p>米歇尔成功逃出！用了 <span id="victory-steps">0</span> 步</p>
-        <button class="btn" onclick="resetGame()">再来一局</button>
+          <button class="btn" onclick="prevLevel()">上一层</button>
+          <button class="btn" onclick="resetGame()">再来一局</button>
+          <button class="btn" onclick="nextLevel()">下一层</button>
       </div>
     </div>
 
@@ -1893,7 +1895,27 @@
         const currentFloor = parseInt(elevatorFloor.textContent, 10) || 1;
         loadLevelByFloor(currentFloor);
       }
+      // 上一关
+      function prevLevel() {
+        const currentFloor = parseInt(elevatorFloor.textContent, 10) || 1;
+        const prevFloor = Math.max(1, currentFloor - 1);
+        if (prevFloor !== currentFloor) {
+          updateElevatorFloor(prevFloor);
+          victoryOverlay.classList.remove("show");
+        }
+      }
 
+      // 下一关
+      function nextLevel() {
+        const currentFloor = parseInt(elevatorFloor.textContent, 10) || 1;
+        const maxLevel = getTotalLevels();
+        const nextFloor = Math.min(maxLevel, currentFloor + 1);
+        if (nextFloor !== currentFloor) {
+          updateElevatorFloor(nextFloor);
+          victoryOverlay.classList.remove("show");
+        }
+      }
+	  
       // ============================================================
       // 提示系统
       // ============================================================
