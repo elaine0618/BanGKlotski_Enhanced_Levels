@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>超市购物助手 - 菜谱匹配</title>
+    <title>邦多利一次买够</title>
     <style>
         * {
             margin: 0;
@@ -714,7 +714,7 @@
 <body>
     <div class="header">
         <div class="header-top">
-            <h1>🛒 购物助手</h1>
+            <h1>邦多利一次买够</h1>
             <div class="settings-icon" id="settingsBtn">⚙️</div>
         </div>
         <div class="stats">
@@ -798,14 +798,14 @@
     <!-- 菜谱侧边栏 -->
     <div class="recipe-sidebar" id="recipeSidebar">
         <div class="sidebar-header">
-            <h3>📖 我的菜谱</h3>
+            <h3>📖 快速买菜</h3>
             <span class="sidebar-close" id="recipeClose">✕</span>
         </div>
         <div class="sidebar-content" id="recipeContent">
             <div class="recipe-add">
-                <input type="text" class="recipe-input" id="recipeName" placeholder="菜谱名称，如：咖喱鸡">
-                <input type="text" class="recipe-input" id="recipeKeywords" placeholder="食材关键词，用逗号分隔，如：土豆,胡萝卜,洋葱,咖喱">
-                <button class="recipe-add-btn" id="addRecipeBtn">➕ 添加菜谱</button>
+                <input type="text" class="recipe-input" id="recipeName" placeholder="起个名">
+                <input type="text" class="recipe-input" id="recipeKeywords" placeholder="关键词，逗号分隔">
+                <button class="recipe-add-btn" id="addRecipeBtn">➕ 添加方案</button>
             </div>
             <div class="recipe-list" id="recipeList"></div>
         </div>
@@ -813,7 +813,7 @@
 
     <!-- 编辑菜谱弹窗 -->
     <div class="edit-modal" id="editModal">
-        <h4>编辑菜谱</h4>
+        <h4>编辑</h4>
         <input type="text" id="editRecipeName" placeholder="菜谱名称">
         <input type="text" id="editRecipeKeywords" placeholder="食材关键词，用逗号分隔">
         <div class="edit-modal-buttons">
@@ -855,7 +855,6 @@
             if (savedToken) {
                 currentHeaders.authorization = savedToken;
             } else {
-                // 默认 Token
                 currentHeaders.authorization = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdCI6IntcImZpZWxkc1wiOntcInNlc3Npb25LZXlcIjpcIjVkaWFaVGJ2WEFFNllzcmZ6MWxEYVE9PVwifSxcIm1lbWJlcklkXCI6OTE5MjAwMn0iLCJ2ZXIiOjEsImV4cCI6MTc3NjkzNjQ4MX0.HEXBAHYHDM3itF2TTI2sacQMLiMS3NBIE_nAFjnIvXM";
             }
             document.getElementById('tokenInput').value = currentHeaders.authorization;
@@ -1068,7 +1067,7 @@
         function renderRecipes() {
             const container = document.getElementById('recipeList');
             if (recipes.length === 0) {
-                container.innerHTML = '<div class="empty-state">还没有菜谱，点击上方添加</div>';
+                container.innerHTML = '<div class="empty-state">点击上方添加</div>';
                 return;
             }
             
@@ -1079,7 +1078,7 @@
                         ${recipe.keywords.map(k => `<span>${escapeHtml(k)}</span>`).join('')}
                     </div>
                     <div class="recipe-actions">
-                        <button class="recipe-match-btn" data-idx="${idx}">🔍 匹配食材</button>
+                        <button class="recipe-match-btn" data-idx="${idx}">🔍 匹配</button>
                         <button class="recipe-edit-btn" data-idx="${idx}">✏️ 编辑</button>
                         <button class="recipe-delete-btn" data-idx="${idx}">🗑 删除</button>
                     </div>
@@ -1100,7 +1099,7 @@
         function matchRecipeToGoods(idx) {
             const recipe = recipes[idx];
             matchKeyword = recipe.keywords.join('|');
-            document.getElementById('matchBannerText').innerHTML = `📖 当前匹配菜谱「${escapeHtml(recipe.name)}」的食材：${recipe.keywords.join('、')}`;
+            document.getElementById('matchBannerText').innerHTML = `📖 当前匹配「${escapeHtml(recipe.name)}」的食材：${recipe.keywords.join('、')}`;
             document.getElementById('matchBanner').classList.add('show');
             closeRecipe();
             document.getElementById('searchInput').value = '';
@@ -1108,14 +1107,14 @@
             currentCategory = null;
             renderCategories();
             renderGoods();
-            showToast(`已匹配菜谱「${recipe.name}」`);
+            showToast(`已匹配「${recipe.name}」`);
         }
 
         function clearMatch() {
             matchKeyword = '';
             document.getElementById('matchBanner').classList.remove('show');
             renderGoods();
-            showToast('已清除菜谱匹配');
+            showToast('已清除匹配');
         }
 
         function openEditModal(idx) {
@@ -1341,6 +1340,7 @@
                 
                 await fetchAllGoods();
                 saveCache();
+                renderCategories();
                 renderGoods();
                 
                 const stats = document.querySelector('.header .stats');
@@ -1362,8 +1362,9 @@
 
         function renderCategories() {
             const container = document.getElementById('categoriesList');
+            if (!container) return;
             container.innerHTML = `<div class="category-tag ${currentCategory === null ? 'active' : ''}" data-cat-id="">全部</div>
-                ${categories.map(cat => `<div class="category-tag ${currentCategory === cat.id ? 'active' : ''}" data-cat-id="${cat.id}">${cat.name}</div>`).join('')}`;
+                ${categories.map(cat => `<div class="category-tag ${currentCategory === cat.id ? 'active' : ''}" data-cat-id="${cat.id}">${escapeHtml(cat.name)}</div>`).join('')}`;
             document.querySelectorAll('.category-tag').forEach(el => {
                 el.addEventListener('click', () => {
                     currentCategory = el.dataset.catId === "" ? null : parseInt(el.dataset.catId);
