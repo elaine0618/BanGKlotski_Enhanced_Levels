@@ -18,14 +18,12 @@
             padding-bottom: 100px;
         }
 
-        /* 头部 */
         .header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 20px;
             border-radius: 16px;
             margin-bottom: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .header-top {
@@ -49,17 +47,10 @@
             justify-content: center;
             font-size: 22px;
             cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .settings-icon:active {
-            transform: scale(0.95);
-            background: rgba(255,255,255,0.3);
         }
 
         .header .stats {
             font-size: 14px;
-            opacity: 0.9;
             display: flex;
             gap: 20px;
             margin-top: 12px;
@@ -72,24 +63,17 @@
             border-radius: 20px;
         }
 
-        /* 刷新按钮 */
         .refresh-btn {
             background: #ff6b6b;
             color: white;
             border: none;
-            padding: 12px 24px;
+            padding: 12px;
             border-radius: 30px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
             margin-top: 12px;
             width: 100%;
-            transition: all 0.3s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
-
-        .refresh-btn:active {
-            transform: scale(0.98);
         }
 
         .refresh-btn.disabled {
@@ -97,7 +81,6 @@
             pointer-events: none;
         }
 
-        /* 当前匹配提示 */
         .match-banner {
             background: #e8f5e9;
             border-radius: 12px;
@@ -112,22 +95,15 @@
             display: flex;
         }
 
-        .match-banner-text {
-            color: #2e7d32;
-            font-size: 14px;
-        }
-
         .match-banner-clear {
             background: #ff6b6b;
             color: white;
             border: none;
             padding: 4px 12px;
             border-radius: 20px;
-            font-size: 12px;
             cursor: pointer;
         }
 
-        /* 悬浮按钮组 */
         .floating-buttons {
             position: fixed;
             bottom: 20px;
@@ -148,23 +124,10 @@
             font-size: 24px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             cursor: pointer;
-            transition: transform 0.2s;
-            border: none;
         }
 
-        .float-btn:active {
-            transform: scale(0.95);
-        }
-
-        .cart-btn {
-            background: #ff6b6b;
-            color: white;
-        }
-
-        .recipe-btn {
-            background: #4caf50;
-            color: white;
-        }
+        .cart-btn { background: #ff6b6b; color: white; }
+        .recipe-btn { background: #4caf50; color: white; }
 
         .badge {
             position: absolute;
@@ -179,10 +142,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
         }
 
-        /* 侧边栏通用 */
         .cart-sidebar, .recipe-sidebar {
             position: fixed;
             top: 0;
@@ -191,17 +152,13 @@
             max-width: 400px;
             height: 100%;
             background: white;
-            box-shadow: -2px 0 12px rgba(0,0,0,0.2);
             z-index: 200;
             transition: right 0.3s ease;
             display: flex;
             flex-direction: column;
-            overflow: hidden;
         }
 
-        .cart-sidebar.open, .recipe-sidebar.open {
-            right: 0;
-        }
+        .cart-sidebar.open, .recipe-sidebar.open { right: 0; }
 
         .sidebar-header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -212,14 +169,9 @@
             align-items: center;
         }
 
-        .sidebar-header h3 {
-            font-size: 20px;
-        }
-
         .sidebar-close {
             font-size: 28px;
             cursor: pointer;
-            line-height: 1;
         }
 
         .sidebar-content {
@@ -228,7 +180,6 @@
             padding: 12px;
         }
 
-        /* 设置弹窗 */
         .settings-modal {
             position: fixed;
             top: 50%;
@@ -240,12 +191,9 @@
             border-radius: 20px;
             z-index: 250;
             display: none;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
 
-        .settings-modal.show {
-            display: block;
-        }
+        .settings-modal.show { display: block; }
 
         .settings-modal-header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -254,58 +202,18 @@
             border-radius: 20px 20px 0 0;
             display: flex;
             justify-content: space-between;
-            align-items: center;
         }
 
-        .settings-modal-header h3 {
-            font-size: 18px;
-        }
-
-        .settings-close {
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .settings-modal-body {
-            padding: 20px;
-        }
-
-        .settings-modal-body .form-item {
-            margin-bottom: 16px;
-        }
-
-        .settings-modal-body label {
-            font-size: 14px;
-            font-weight: 500;
-            color: #333;
-            display: block;
-            margin-bottom: 8px;
-        }
+        .settings-modal-body { padding: 20px; }
 
         .settings-modal-body textarea {
             width: 100%;
             padding: 12px;
             border: 1px solid #e0e0e0;
             border-radius: 10px;
-            font-size: 12px;
             font-family: monospace;
-            background: #fafafa;
             min-height: 100px;
-            resize: vertical;
-        }
-
-        .settings-modal-body input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 14px;
-        }
-
-        .settings-hint {
-            font-size: 11px;
-            color: #999;
-            margin-top: 6px;
+            margin-top: 8px;
         }
 
         .settings-actions {
@@ -319,22 +227,13 @@
             padding: 12px;
             border: none;
             border-radius: 10px;
-            font-size: 14px;
             font-weight: bold;
             cursor: pointer;
         }
 
-        .settings-save {
-            background: #667eea;
-            color: white;
-        }
+        .settings-save { background: #667eea; color: white; }
+        .settings-test { background: #4caf50; color: white; }
 
-        .settings-test {
-            background: #4caf50;
-            color: white;
-        }
-
-        /* 菜谱样式 */
         .recipe-add {
             background: #f8f8f8;
             padding: 16px;
@@ -347,8 +246,6 @@
             padding: 12px;
             border: 1px solid #e0e0e0;
             border-radius: 10px;
-            font-size: 14px;
-            outline: none;
             margin-bottom: 12px;
         }
 
@@ -356,15 +253,10 @@
             background: #667eea;
             color: white;
             border: none;
-            padding: 10px 16px;
+            padding: 10px;
             border-radius: 10px;
-            cursor: pointer;
             width: 100%;
-            font-size: 14px;
-        }
-
-        .recipe-list {
-            margin-top: 16px;
+            cursor: pointer;
         }
 
         .recipe-item {
@@ -375,18 +267,8 @@
             margin-bottom: 12px;
         }
 
-        .recipe-name {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .recipe-keywords {
-            font-size: 12px;
-            color: #666;
-            margin-bottom: 8px;
-        }
-
+        .recipe-name { font-size: 16px; font-weight: bold; margin-bottom: 8px; }
+        .recipe-keywords { font-size: 12px; color: #666; margin-bottom: 8px; }
         .recipe-keywords span {
             background: #f0f0f0;
             padding: 2px 8px;
@@ -395,12 +277,7 @@
             margin: 2px;
         }
 
-        .recipe-actions {
-            display: flex;
-            gap: 8px;
-            margin-top: 8px;
-        }
-
+        .recipe-actions { display: flex; gap: 8px; }
         .recipe-match-btn, .recipe-edit-btn, .recipe-delete-btn {
             padding: 6px 12px;
             border: none;
@@ -408,97 +285,37 @@
             font-size: 12px;
             cursor: pointer;
         }
+        .recipe-match-btn { background: #4caf50; color: white; }
+        .recipe-edit-btn { background: #ff9800; color: white; }
+        .recipe-delete-btn { background: #ff6b6b; color: white; }
 
-        .recipe-match-btn {
-            background: #4caf50;
-            color: white;
-        }
-
-        .recipe-edit-btn {
-            background: #ff9800;
-            color: white;
-        }
-
-        .recipe-delete-btn {
-            background: #ff6b6b;
-            color: white;
-        }
-
-        /* 购物车样式 */
         .cart-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 12px;
             border-bottom: 1px solid #f0f0f0;
-            background: white;
         }
 
-        .cart-item-info {
-            flex: 1;
-        }
-
-        .cart-item-name {
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 4px;
-        }
-
-        .cart-item-price {
-            color: #ff6b6b;
-            font-size: 14px;
-        }
-
-        .cart-item-controls {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
+        .cart-item-controls { display: flex; align-items: center; gap: 12px; }
         .cart-item-controls button {
             width: 30px;
             height: 30px;
-            border: none;
             background: #f0f0f0;
+            border: none;
             border-radius: 50%;
             font-size: 18px;
             cursor: pointer;
         }
-
-        .cart-item-count {
-            font-size: 16px;
-            font-weight: bold;
-            min-width: 30px;
-            text-align: center;
-        }
+        .cart-remove { background: #ff6b6b !important; color: white; }
 
         .cart-footer {
             padding: 16px;
             border-top: 1px solid #e0e0e0;
-            background: white;
         }
+        .cart-total { display: flex; justify-content: space-between; font-size: 18px; font-weight: bold; margin-bottom: 12px; }
+        .clear-cart { background: #ff6b6b; color: white; border: none; padding: 12px; border-radius: 8px; width: 100%; cursor: pointer; }
 
-        .cart-total {
-            display: flex;
-            justify-content: space-between;
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
-
-        .clear-cart {
-            background: #ff6b6b;
-            color: white;
-            border: none;
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 8px;
-        }
-
-        /* 遮罩层 */
         .overlay {
             position: fixed;
             top: 0;
@@ -509,27 +326,20 @@
             z-index: 150;
             display: none;
         }
+        .overlay.show { display: block; }
 
-        .overlay.show {
-            display: block;
-        }
-
-        /* 搜索和筛选 */
         .search-bar {
             background: white;
             border-radius: 12px;
             padding: 12px;
             margin-bottom: 12px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
-
         .search-input {
             width: 100%;
             padding: 12px;
             border: 1px solid #e0e0e0;
             border-radius: 10px;
             font-size: 16px;
-            outline: none;
         }
 
         .categories {
@@ -538,9 +348,7 @@
             overflow-x: auto;
             padding: 8px 0;
             margin-bottom: 12px;
-            scrollbar-width: thin;
         }
-
         .category-tag {
             background: white;
             padding: 8px 16px;
@@ -548,29 +356,20 @@
             font-size: 14px;
             white-space: nowrap;
             cursor: pointer;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
-
-        .category-tag.active {
-            background: #667eea;
-            color: white;
-        }
+        .category-tag.active { background: #667eea; color: white; }
 
         .goods-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
             gap: 12px;
         }
-
         .goods-card {
             background: white;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
-
         .goods-image {
-            width: 100%;
             height: 120px;
             background: #f8f8f8;
             display: flex;
@@ -578,15 +377,10 @@
             justify-content: center;
             font-size: 48px;
         }
-
-        .goods-info {
-            padding: 10px;
-        }
-
+        .goods-info { padding: 10px; }
         .goods-name {
             font-size: 13px;
             font-weight: 500;
-            color: #333;
             line-height: 1.4;
             margin-bottom: 8px;
             display: -webkit-box;
@@ -595,13 +389,7 @@
             overflow: hidden;
             min-height: 36px;
         }
-
-        .goods-price {
-            font-size: 18px;
-            font-weight: bold;
-            color: #ff6b6b;
-        }
-
+        .goods-price { font-size: 18px; font-weight: bold; color: #ff6b6b; }
         .add-cart-btn {
             width: 100%;
             background: #667eea;
@@ -610,37 +398,22 @@
             padding: 8px;
             margin-top: 8px;
             border-radius: 8px;
-            font-size: 12px;
             cursor: pointer;
         }
 
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #999;
-        }
-
+        .loading { text-align: center; padding: 40px; color: #999; }
         .loading-spinner {
-            display: inline-block;
             width: 30px;
             height: 30px;
             border: 3px solid #f3f3f3;
             border-top: 3px solid #667eea;
             border-radius: 50%;
             animation: spin 1s linear infinite;
+            margin: 0 auto 12px;
         }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 40px;
-            color: #999;
-        }
-
+        .empty-state { text-align: center; padding: 40px; color: #999; }
         .toast {
             position: fixed;
             bottom: 100px;
@@ -652,10 +425,8 @@
             border-radius: 30px;
             font-size: 14px;
             z-index: 300;
-            white-space: nowrap;
         }
 
-        /* 编辑弹窗 */
         .edit-modal {
             position: fixed;
             top: 50%;
@@ -669,46 +440,18 @@
             z-index: 250;
             display: none;
         }
-
-        .edit-modal.show {
-            display: block;
-        }
-
-        .edit-modal h4 {
-            margin-bottom: 16px;
-        }
-
+        .edit-modal.show { display: block; }
         .edit-modal input {
             width: 100%;
             padding: 12px;
             border: 1px solid #e0e0e0;
             border-radius: 10px;
             margin-bottom: 12px;
-            font-size: 14px;
         }
-
-        .edit-modal-buttons {
-            display: flex;
-            gap: 12px;
-            margin-top: 16px;
-        }
-
-        .edit-modal-buttons button {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .edit-save {
-            background: #667eea;
-            color: white;
-        }
-
-        .edit-cancel {
-            background: #f0f0f0;
-        }
+        .edit-modal-buttons { display: flex; gap: 12px; margin-top: 16px; }
+        .edit-modal-buttons button { flex: 1; padding: 10px; border: none; border-radius: 8px; cursor: pointer; }
+        .edit-save { background: #667eea; color: white; }
+        .edit-cancel { background: #f0f0f0; }
     </style>
 </head>
 <body>
@@ -725,27 +468,23 @@
         <button class="refresh-btn" id="refreshBtn">🔄 点击刷新商品数据</button>
     </div>
 
-    <!-- 设置弹窗 -->
     <div class="settings-modal" id="settingsModal">
         <div class="settings-modal-header">
             <h3>⚙️ Token 设置</h3>
-            <span class="settings-close" id="settingsClose">✕</span>
+            <span class="sidebar-close" id="settingsClose">✕</span>
         </div>
         <div class="settings-modal-body">
-            <div class="form-item">
-                <label>Authorization Token</label>
-                <textarea id="tokenInput" placeholder="粘贴 Bearer token...">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdCI6IntcImZpZWxkc1wiOntcInNlc3Npb25LZXlcIjpcIjVkaWFaVGJ2WEFFNllzcmZ6MWxEYVE9PVwifSxcIm1lbWJlcklkXCI6OTE5MjAwMn0iLCJ2ZXIiOjEsImV4cCI6MTc3NjkzNjQ4MX0.HEXBAHYHDM3itF2TTI2sacQMLiMS3NBIE_nAFjnIvXM</textarea>
-                <div class="settings-hint">Token 过期时在此更新，保存后需要重新刷新商品</div>
-            </div>
+            <label>Authorization Token</label>
+            <textarea id="tokenInput">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdCI6IntcImZpZWxkc1wiOntcInNlc3Npb25LZXlcIjpcIjVkaWFaVGJ2WEFFNllzcmZ6MWxEYVE9PVwifSxcIm1lbWJlcklkXCI6OTE5MjAwMn0iLCJ2ZXIiOjEsImV4cCI6MTc3NjkzNjQ4MX0.HEXBAHYHDM3itF2TTI2sacQMLiMS3NBIE_nAFjnIvXM</textarea>
+            <div class="settings-hint">Token 过期时在此更新，保存后需要重新刷新商品</div>
             <div class="settings-actions">
                 <button class="settings-test" id="testTokenBtn">测试连接</button>
                 <button class="settings-save" id="saveTokenBtn">保存配置</button>
             </div>
-            <div class="settings-hint" id="tokenStatus" style="margin-top: 12px; text-align: center;"></div>
+            <div id="tokenStatus" style="margin-top: 12px; text-align: center;"></div>
         </div>
     </div>
 
-    <!-- 菜谱匹配提示条 -->
     <div class="match-banner" id="matchBanner">
         <span class="match-banner-text" id="matchBannerText"></span>
         <button class="match-banner-clear" id="clearMatchBtn">清除匹配</button>
@@ -755,7 +494,10 @@
         <input type="text" class="search-input" placeholder="🔍 搜索商品名称..." id="searchInput">
     </div>
 
-    <div class="categories" id="categoriesList"></div>
+    <!-- 分类栏 - 初始显示"加载中" -->
+    <div class="categories" id="categoriesList">
+        <div class="category-tag">加载分类中...</div>
+    </div>
 
     <div class="goods-grid" id="goodsGrid">
         <div class="loading">
@@ -763,45 +505,22 @@
         </div>
     </div>
 
-    <!-- 悬浮按钮组 -->
     <div class="floating-buttons">
-        <div class="float-btn recipe-btn" id="recipeBtn">
-            📖
-        </div>
-        <div class="float-btn cart-btn" id="cartBtn">
-            🛒
-            <span class="badge" id="cartBadge">0</span>
-        </div>
+        <div class="float-btn recipe-btn" id="recipeBtn">📖</div>
+        <div class="float-btn cart-btn" id="cartBtn">🛒<span class="badge" id="cartBadge">0</span></div>
     </div>
 
-    <!-- 遮罩层 -->
     <div class="overlay" id="overlay"></div>
 
-    <!-- 购物车侧边栏 -->
     <div class="cart-sidebar" id="cartSidebar">
-        <div class="sidebar-header">
-            <h3>🛒 购物清单</h3>
-            <span class="sidebar-close" id="cartClose">✕</span>
-        </div>
-        <div class="sidebar-content" id="cartItems">
-            <div class="empty-state">购物车还是空的</div>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>合计：</span>
-                <span id="cartTotal">¥0.00</span>
-            </div>
-            <button class="clear-cart" id="clearCart">清空购物车</button>
-        </div>
+        <div class="sidebar-header"><h3>🛒 购物清单</h3><span class="sidebar-close" id="cartClose">✕</span></div>
+        <div class="sidebar-content" id="cartItems"><div class="empty-state">购物车还是空的</div></div>
+        <div class="cart-footer"><div class="cart-total"><span>合计：</span><span id="cartTotal">¥0.00</span></div><button class="clear-cart" id="clearCart">清空购物车</button></div>
     </div>
 
-    <!-- 菜谱侧边栏 -->
     <div class="recipe-sidebar" id="recipeSidebar">
-        <div class="sidebar-header">
-            <h3>📖 快速买菜</h3>
-            <span class="sidebar-close" id="recipeClose">✕</span>
-        </div>
-        <div class="sidebar-content" id="recipeContent">
+        <div class="sidebar-header"><h3>📖 快速买菜</h3><span class="sidebar-close" id="recipeClose">✕</span></div>
+        <div class="sidebar-content">
             <div class="recipe-add">
                 <input type="text" class="recipe-input" id="recipeName" placeholder="起个名">
                 <input type="text" class="recipe-input" id="recipeKeywords" placeholder="关键词，逗号分隔">
@@ -811,563 +530,214 @@
         </div>
     </div>
 
-    <!-- 编辑菜谱弹窗 -->
     <div class="edit-modal" id="editModal">
         <h4>编辑</h4>
         <input type="text" id="editRecipeName" placeholder="菜谱名称">
         <input type="text" id="editRecipeKeywords" placeholder="食材关键词，用逗号分隔">
-        <div class="edit-modal-buttons">
-            <button class="edit-cancel" id="editCancel">取消</button>
-            <button class="edit-save" id="editSave">保存</button>
-        </div>
+        <div class="edit-modal-buttons"><button class="edit-cancel" id="editCancel">取消</button><button class="edit-save" id="editSave">保存</button></div>
     </div>
 
     <script>
-        // 配置
         const STORE_ID = 26602;
         const BASE_URL = "https://v.ystpay.cn";
         
-        // 全局配置
-        let currentHeaders = {
-            "merch": "2005214400238",
-            "authorization": "",
-            "businesstype": "D",
-            "Content-Type": "application/json"
-        };
+        let currentHeaders = { "merch": "2005214400238", "authorization": "", "businesstype": "D", "Content-Type": "application/json" };
+        let allGoods = [], categories = [], currentCategory = null, currentKeyword = "", matchKeyword = "", cart = [], recipes = [], isLoading = false, editingIndex = -1;
+        const SKIP_KEYWORDS = ['秒杀', '特价', '促销', '买赠', '买x件赠y件', '百货', '家电', '清洁', '家居', '母婴', '美容', '单品'];
 
-        // 全局数据
-        let allGoods = [];
-        let categories = [];
-        let currentCategory = null;
-        let currentKeyword = "";
-        let matchKeyword = "";
-        let cart = [];
-        let recipes = [];
-        let isLoading = false;
-        let editingIndex = -1;
-
-        // 需要过滤的大分类关键词（模糊匹配）
-        const SKIP_KEYWORDS = ['秒杀', '特价', '促销', '买赠', '买x件赠y件', '百货', '家电', '清洁', '家居', '母婴', '美容'];
-
-        // 加载 Token
         function loadToken() {
-            const savedToken = localStorage.getItem('auth_token');
-            if (savedToken) {
-                currentHeaders.authorization = savedToken;
-            } else {
-                currentHeaders.authorization = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdCI6IntcImZpZWxkc1wiOntcInNlc3Npb25LZXlcIjpcIjVkaWFaVGJ2WEFFNllzcmZ6MWxEYVE9PVwifSxcIm1lbWJlcklkXCI6OTE5MjAwMn0iLCJ2ZXIiOjEsImV4cCI6MTc3NjkzNjQ4MX0.HEXBAHYHDM3itF2TTI2sacQMLiMS3NBIE_nAFjnIvXM";
-            }
+            const saved = localStorage.getItem('auth_token');
+            currentHeaders.authorization = saved || "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdCI6IntcImZpZWxkc1wiOntcInNlc3Npb25LZXlcIjpcIjVkaWFaVGJ2WEFFNllzcmZ6MWxEYVE9PVwifSxcIm1lbWJlcklkXCI6OTE5MjAwMn0iLCJ2ZXIiOjEsImV4cCI6MTc3NjkzNjQ4MX0.HEXBAHYHDM3itF2TTI2sacQMLiMS3NBIE_nAFjnIvXM";
             document.getElementById('tokenInput').value = currentHeaders.authorization;
         }
 
-        // 保存 Token
         function saveToken() {
             let token = document.getElementById('tokenInput').value.trim();
-            if (!token) {
-                showToast('请输入 Token');
-                return;
-            }
-            if (!token.startsWith('Bearer ')) {
-                token = 'Bearer ' + token;
-            }
+            if (!token) { showToast('请输入 Token'); return; }
+            if (!token.startsWith('Bearer ')) token = 'Bearer ' + token;
             currentHeaders.authorization = token;
             localStorage.setItem('auth_token', token);
             showToast('Token 已保存');
-            document.getElementById('tokenStatus').innerHTML = '✅ 已保存';
-            setTimeout(() => {
-                document.getElementById('tokenStatus').innerHTML = '';
-            }, 2000);
         }
 
-        // 测试 Token 连接
         async function testToken() {
-            const token = document.getElementById('tokenInput').value.trim();
-            if (!token) {
-                showToast('请输入 Token');
-                return;
-            }
-            let testTokenValue = token;
-            if (!testTokenValue.startsWith('Bearer ')) {
-                testTokenValue = 'Bearer ' + testTokenValue;
-            }
-            
+            let token = document.getElementById('tokenInput').value.trim();
+            if (!token) { showToast('请输入 Token'); return; }
+            if (!token.startsWith('Bearer ')) token = 'Bearer ' + token;
             showToast('测试中...');
             try {
-                const response = await fetch(`${BASE_URL}/dj-mini/categories?storeId=${STORE_ID}`, {
-                    headers: {
-                        "merch": "2005214400238",
-                        "authorization": testTokenValue,
-                        "businesstype": "D",
-                        "Content-Type": "application/json"
-                    }
-                });
-                const data = await response.json();
-                if (response.status === 200 && data.status === 200) {
-                    document.getElementById('tokenStatus').innerHTML = '✅ Token 有效！';
-                    showToast('Token 有效');
-                } else if (data.status === -1) {
-                    document.getElementById('tokenStatus').innerHTML = '❌ Token 无效或已过期';
-                    showToast('Token 无效');
-                } else {
-                    document.getElementById('tokenStatus').innerHTML = '⚠️ 连接异常';
-                }
-            } catch (error) {
-                document.getElementById('tokenStatus').innerHTML = '❌ 网络连接失败';
-                showToast('网络连接失败');
-            }
-            setTimeout(() => {
-                document.getElementById('tokenStatus').innerHTML = '';
-            }, 3000);
+                const res = await fetch(`${BASE_URL}/dj-mini/categories?storeId=${STORE_ID}`, { headers: { "merch": "2005214400238", "authorization": token, "businesstype": "D" } });
+                const data = await res.json();
+                if (res.status === 200 && data.status === 200) { document.getElementById('tokenStatus').innerHTML = '✅ Token 有效！'; showToast('Token 有效'); }
+                else if (data.status === -1) { document.getElementById('tokenStatus').innerHTML = '❌ Token 无效或已过期'; showToast('Token 无效'); }
+                else { document.getElementById('tokenStatus').innerHTML = '⚠️ 连接异常'; }
+            } catch(e) { document.getElementById('tokenStatus').innerHTML = '❌ 网络失败'; showToast('网络失败'); }
+            setTimeout(() => { document.getElementById('tokenStatus').innerHTML = ''; }, 2000);
         }
 
-        // 加载缓存
         function loadCache() {
             const cachedGoods = localStorage.getItem('goods_cache');
             if (cachedGoods) {
-                try {
-                    const cache = JSON.parse(cachedGoods);
-                    if (cache.data && cache.data.length > 0) {
-                        allGoods = cache.data;
-                        showToast(`已加载缓存（${allGoods.length}个商品）`, 2000);
-                    }
-                } catch(e) {}
+                try { const cache = JSON.parse(cachedGoods); if (cache.data && cache.data.length) { allGoods = cache.data; showToast(`已加载缓存（${allGoods.length}个商品）`, 2000); } } catch(e) {}
             }
-            
-            const cachedCategories = localStorage.getItem('categories_cache');
-            if (cachedCategories) {
-                try {
-                    categories = JSON.parse(cachedCategories);
-                    renderCategories();
-                } catch(e) {}
+            const cachedCats = localStorage.getItem('categories_cache');
+            if (cachedCats) {
+                try { categories = JSON.parse(cachedCats); if (categories.length) { renderCategories(); if (allGoods.length) renderGoods(); updateStats(); } } catch(e) {}
             }
         }
 
-        // 保存缓存
         function saveCache() {
             localStorage.setItem('goods_cache', JSON.stringify({ data: allGoods, timestamp: Date.now() }));
             localStorage.setItem('categories_cache', JSON.stringify(categories));
         }
 
-        // 加载购物车
-        function loadCart() {
-            const saved = localStorage.getItem('shoppingCart');
-            if (saved) cart = JSON.parse(saved);
-            updateCartUI();
-        }
-
-        function loadRecipes() {
-            const saved = localStorage.getItem('recipes');
-            if (saved) recipes = JSON.parse(saved);
-            renderRecipes();
-        }
-
-        function saveCart() {
-            localStorage.setItem('shoppingCart', JSON.stringify(cart));
-        }
-
-        function saveRecipes() {
-            localStorage.setItem('recipes', JSON.stringify(recipes));
-        }
-
-        // 更新购物车UI
-        function updateCartUI() {
-            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-            document.getElementById('cartBadge').textContent = totalCount;
-            
+        function updateStats() {
             const stats = document.querySelector('.header .stats');
             if (stats) {
                 const spans = stats.querySelectorAll('span');
-                if (spans[2]) spans[2].innerHTML = `🛒 ${totalCount} 件商品`;
+                if (spans[0]) spans[0].innerHTML = `📦 ${allGoods.length} 个商品`;
+                if (spans[1]) spans[1].innerHTML = `📁 ${categories.length} 个分类`;
             }
-            
-            const cartItemsDiv = document.getElementById('cartItems');
-            if (cart.length === 0) {
-                cartItemsDiv.innerHTML = '<div class="empty-state">购物车还是空的</div>';
-                document.getElementById('cartTotal').textContent = '¥0.00';
-                return;
-            }
-            
+        }
+
+        function loadCart() { const saved = localStorage.getItem('shoppingCart'); if (saved) cart = JSON.parse(saved); updateCartUI(); }
+        function saveCart() { localStorage.setItem('shoppingCart', JSON.stringify(cart)); }
+        function loadRecipes() { const saved = localStorage.getItem('recipes'); if (saved) recipes = JSON.parse(saved); renderRecipes(); }
+        function saveRecipes() { localStorage.setItem('recipes', JSON.stringify(recipes)); }
+
+        function updateCartUI() {
+            const totalCount = cart.reduce((s, i) => s + i.quantity, 0);
+            document.getElementById('cartBadge').textContent = totalCount;
+            const stats = document.querySelector('.header .stats');
+            if (stats && stats.querySelectorAll('span')[2]) stats.querySelectorAll('span')[2].innerHTML = `🛒 ${totalCount} 件商品`;
+            const cartDiv = document.getElementById('cartItems');
+            if (!cart.length) { cartDiv.innerHTML = '<div class="empty-state">购物车还是空的</div>'; document.getElementById('cartTotal').textContent = '¥0.00'; return; }
             let total = 0;
-            cartItemsDiv.innerHTML = cart.map(item => {
-                const itemTotal = item.price * item.quantity;
-                total += itemTotal;
-                return `
-                    <div class="cart-item">
-                        <div class="cart-item-info">
-                            <div class="cart-item-name">${escapeHtml(item.name)}</div>
-                            <div class="cart-item-price">¥${item.price.toFixed(2)}</div>
-                        </div>
-                        <div class="cart-item-controls">
-                            <button class="cart-decrease" data-id="${item.id}">-</button>
-                            <span class="cart-item-count">${item.quantity}</span>
-                            <button class="cart-increase" data-id="${item.id}">+</button>
-                            <button class="cart-remove" data-id="${item.id}" style="background:#ff6b6b; color:white;">删</button>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-            
+            cartDiv.innerHTML = cart.map(i => { total += i.price * i.quantity; return `<div class="cart-item"><div><div>${escapeHtml(i.name)}</div><div style="color:#ff6b6b">¥${i.price.toFixed(2)}</div></div><div class="cart-item-controls"><button class="cart-dec" data-id="${i.id}">-</button><span style="min-width:30px;text-align:center">${i.quantity}</span><button class="cart-inc" data-id="${i.id}">+</button><button class="cart-remove" data-id="${i.id}">删</button></div></div>`; }).join('');
             document.getElementById('cartTotal').textContent = `¥${total.toFixed(2)}`;
-            
-            document.querySelectorAll('.cart-decrease').forEach(btn => {
-                btn.addEventListener('click', () => updateCartQuantity(parseInt(btn.dataset.id), -1));
-            });
-            document.querySelectorAll('.cart-increase').forEach(btn => {
-                btn.addEventListener('click', () => updateCartQuantity(parseInt(btn.dataset.id), 1));
-            });
-            document.querySelectorAll('.cart-remove').forEach(btn => {
-                btn.addEventListener('click', () => removeFromCart(parseInt(btn.dataset.id)));
-            });
+            document.querySelectorAll('.cart-dec').forEach(b => b.addEventListener('click', () => updateQty(parseInt(b.dataset.id), -1)));
+            document.querySelectorAll('.cart-inc').forEach(b => b.addEventListener('click', () => updateQty(parseInt(b.dataset.id), 1)));
+            document.querySelectorAll('.cart-remove').forEach(b => b.addEventListener('click', () => removeFromCart(parseInt(b.dataset.id))));
         }
 
-        function updateCartQuantity(id, delta) {
-            const index = cart.findIndex(item => item.id === id);
-            if (index !== -1) {
-                const newQuantity = cart[index].quantity + delta;
-                if (newQuantity <= 0) {
-                    cart.splice(index, 1);
-                } else {
-                    cart[index].quantity = newQuantity;
-                }
-                saveCart();
-                updateCartUI();
-                showToast(delta > 0 ? '已添加' : '已减少');
-            }
-        }
+        function updateQty(id, d) { let idx = cart.findIndex(i => i.id === id); if (idx !== -1) { let newQ = cart[idx].quantity + d; if (newQ <= 0) cart.splice(idx, 1); else cart[idx].quantity = newQ; saveCart(); updateCartUI(); showToast(d > 0 ? '已添加' : '已减少'); } }
+        function removeFromCart(id) { cart = cart.filter(i => i.id !== id); saveCart(); updateCartUI(); showToast('已移除'); }
+        function addToCart(g) { let ex = cart.find(i => i.id === g.id); if (ex) ex.quantity++; else cart.push({ id: g.id, name: g.name, price: g.price, quantity: 1 }); saveCart(); updateCartUI(); showToast(`已添加：${g.name.substring(0, 20)}`); }
+        function clearCart() { if (confirm('确定清空购物车？')) { cart = []; saveCart(); updateCartUI(); showToast('购物车已清空'); } }
 
-        function removeFromCart(id) {
-            cart = cart.filter(item => item.id !== id);
-            saveCart();
-            updateCartUI();
-            showToast('已移除');
-        }
-
-        function addToCart(goods) {
-            const existing = cart.find(item => item.id === goods.id);
-            if (existing) {
-                existing.quantity++;
-            } else {
-                cart.push({ id: goods.id, name: goods.name, price: goods.price, quantity: 1 });
-            }
-            saveCart();
-            updateCartUI();
-            showToast(`已添加：${goods.name.substring(0, 20)}`);
-        }
-
-        function clearCart() {
-            if (confirm('确定清空购物车吗？')) {
-                cart = [];
-                saveCart();
-                updateCartUI();
-                showToast('购物车已清空');
-            }
-        }
-
-        // 菜谱功能
         function renderRecipes() {
-            const container = document.getElementById('recipeList');
-            if (recipes.length === 0) {
-                container.innerHTML = '<div class="empty-state">点击上方添加</div>';
-                return;
-            }
-            
-            container.innerHTML = recipes.map((recipe, idx) => `
-                <div class="recipe-item">
-                    <div class="recipe-name">${escapeHtml(recipe.name)}</div>
-                    <div class="recipe-keywords">
-                        ${recipe.keywords.map(k => `<span>${escapeHtml(k)}</span>`).join('')}
-                    </div>
-                    <div class="recipe-actions">
-                        <button class="recipe-match-btn" data-idx="${idx}">🔍 匹配</button>
-                        <button class="recipe-edit-btn" data-idx="${idx}">✏️ 编辑</button>
-                        <button class="recipe-delete-btn" data-idx="${idx}">🗑 删除</button>
-                    </div>
-                </div>
-            `).join('');
-            
-            document.querySelectorAll('.recipe-match-btn').forEach(btn => {
-                btn.addEventListener('click', () => matchRecipeToGoods(parseInt(btn.dataset.idx)));
-            });
-            document.querySelectorAll('.recipe-edit-btn').forEach(btn => {
-                btn.addEventListener('click', () => openEditModal(parseInt(btn.dataset.idx)));
-            });
-            document.querySelectorAll('.recipe-delete-btn').forEach(btn => {
-                btn.addEventListener('click', () => deleteRecipe(parseInt(btn.dataset.idx)));
-            });
+            const cont = document.getElementById('recipeList');
+            if (!recipes.length) { cont.innerHTML = '<div class="empty-state">点击上方添加</div>'; return; }
+            cont.innerHTML = recipes.map((r, i) => `<div class="recipe-item"><div class="recipe-name">${escapeHtml(r.name)}</div><div class="recipe-keywords">${r.keywords.map(k => `<span>${escapeHtml(k)}</span>`).join('')}</div><div class="recipe-actions"><button class="match-btn" data-idx="${i}">🔍 匹配</button><button class="edit-btn" data-idx="${i}">✏️ 编辑</button><button class="del-btn" data-idx="${i}">🗑 删除</button></div></div>`).join('');
+            document.querySelectorAll('.match-btn').forEach(b => b.addEventListener('click', () => matchRecipe(parseInt(b.dataset.idx))));
+            document.querySelectorAll('.edit-btn').forEach(b => b.addEventListener('click', () => openEdit(parseInt(b.dataset.idx))));
+            document.querySelectorAll('.del-btn').forEach(b => b.addEventListener('click', () => deleteRecipe(parseInt(b.dataset.idx))));
         }
 
-        function matchRecipeToGoods(idx) {
-            const recipe = recipes[idx];
-            matchKeyword = recipe.keywords.join('|');
-            document.getElementById('matchBannerText').innerHTML = `📖 当前匹配「${escapeHtml(recipe.name)}」的食材：${recipe.keywords.join('、')}`;
-            document.getElementById('matchBanner').classList.add('show');
-            closeRecipe();
-            document.getElementById('searchInput').value = '';
-            currentKeyword = '';
-            currentCategory = null;
-            renderCategories();
-            renderGoods();
-            showToast(`已匹配「${recipe.name}」`);
-        }
+        function matchRecipe(idx) { let r = recipes[idx]; matchKeyword = r.keywords.join('|'); document.getElementById('matchBannerText').innerHTML = `📖 当前匹配「${escapeHtml(r.name)}」：${r.keywords.join('、')}`; document.getElementById('matchBanner').classList.add('show'); closeRecipe(); document.getElementById('searchInput').value = ''; currentKeyword = ''; currentCategory = null; renderCategories(); renderGoods(); showToast(`已匹配「${r.name}」`); }
+        function clearMatch() { matchKeyword = ''; document.getElementById('matchBanner').classList.remove('show'); renderGoods(); showToast('已清除匹配'); }
+        function openEdit(idx) { editingIndex = idx; let r = recipes[idx]; document.getElementById('editRecipeName').value = r.name; document.getElementById('editRecipeKeywords').value = r.keywords.join(','); document.getElementById('editModal').classList.add('show'); overlay.classList.add('show'); }
+        function saveEdit() { let name = document.getElementById('editRecipeName').value.trim(); let kwStr = document.getElementById('editRecipeKeywords').value.trim(); if (!name || !kwStr) { showToast('请填写完整'); return; } let kw = kwStr.split(/[ ,，]+/).filter(k => k.trim()); if (!kw.length) { showToast('请输入关键词'); return; } recipes[editingIndex] = { name, keywords: kw }; saveRecipes(); renderRecipes(); closeEditModal(); showToast('已更新'); }
+        function closeEditModal() { editingIndex = -1; document.getElementById('editModal').classList.remove('show'); overlay.classList.remove('show'); }
+        function deleteRecipe(idx) { if (confirm('删除？')) { recipes.splice(idx, 1); saveRecipes(); renderRecipes(); showToast('已删除'); } }
+        function addRecipe() { let name = document.getElementById('recipeName').value.trim(); let kwStr = document.getElementById('recipeKeywords').value.trim(); if (!name || !kwStr) { showToast('请填写完整'); return; } let kw = kwStr.split(/[ ,，]+/).filter(k => k.trim()); if (!kw.length) { showToast('请输入关键词'); return; } recipes.push({ name, keywords: kw }); saveRecipes(); renderRecipes(); document.getElementById('recipeName').value = ''; document.getElementById('recipeKeywords').value = ''; showToast(`已添加「${name}」`); }
 
-        function clearMatch() {
-            matchKeyword = '';
-            document.getElementById('matchBanner').classList.remove('show');
-            renderGoods();
-            showToast('已清除匹配');
-        }
+        function isMatchRecipe(name) { if (!matchKeyword) return true; return matchKeyword.split('|').some(k => name.includes(k)); }
+        function getHeaders() { return { ...currentHeaders }; }
 
-        function openEditModal(idx) {
-            editingIndex = idx;
-            const recipe = recipes[idx];
-            document.getElementById('editRecipeName').value = recipe.name;
-            document.getElementById('editRecipeKeywords').value = recipe.keywords.join(',');
-            document.getElementById('editModal').classList.add('show');
-            overlay.classList.add('show');
-        }
-
-        function saveEdit() {
-            const newName = document.getElementById('editRecipeName').value.trim();
-            const keywordsStr = document.getElementById('editRecipeKeywords').value.trim();
-            if (!newName || !keywordsStr) {
-                showToast('请填写完整');
-                return;
-            }
-            const newKeywords = keywordsStr.split(/[ ,，]+/).filter(k => k.trim());
-            if (newKeywords.length === 0) {
-                showToast('请至少输入一个关键词');
-                return;
-            }
-            recipes[editingIndex] = { name: newName, keywords: newKeywords };
-            saveRecipes();
-            renderRecipes();
-            closeEditModal();
-            showToast('菜谱已更新');
-        }
-
-        function closeEditModal() {
-            editingIndex = -1;
-            document.getElementById('editModal').classList.remove('show');
-            overlay.classList.remove('show');
-        }
-
-        function deleteRecipe(idx) {
-            if (confirm(`确定删除菜谱「${recipes[idx].name}」吗？`)) {
-                recipes.splice(idx, 1);
-                saveRecipes();
-                renderRecipes();
-                showToast('菜谱已删除');
-            }
-        }
-
-        function addRecipe() {
-            const name = document.getElementById('recipeName').value.trim();
-            const keywordsStr = document.getElementById('recipeKeywords').value.trim();
-            if (!name || !keywordsStr) {
-                showToast('请填写完整');
-                return;
-            }
-            const keywords = keywordsStr.split(/[ ,，]+/).filter(k => k.trim());
-            if (keywords.length === 0) {
-                showToast('请至少输入一个关键词');
-                return;
-            }
-            recipes.push({ name, keywords });
-            saveRecipes();
-            renderRecipes();
-            document.getElementById('recipeName').value = '';
-            document.getElementById('recipeKeywords').value = '';
-            showToast(`已添加菜谱「${name}」`);
-        }
-
-        function isMatchRecipe(goodsName) {
-            if (!matchKeyword) return true;
-            const keywords = matchKeyword.split('|');
-            return keywords.some(keyword => goodsName.includes(keyword));
-        }
-
-        // 获取请求头
-        function getHeaders() {
-            return { ...currentHeaders };
-        }
-
-        // API 请求 - 获取分类（带父分类信息）
         async function fetchCategories() {
             try {
-                const response = await fetch(`${BASE_URL}/dj-mini/categories?storeId=${STORE_ID}`, { headers: getHeaders() });
-                const data = await response.json();
+                const res = await fetch(`${BASE_URL}/dj-mini/categories?storeId=${STORE_ID}`, { headers: getHeaders() });
+                const data = await res.json();
                 if (data.status === 200) {
-                    const cats = [];
-                    for (const mainCat of data.data) {
-                        if (mainCat.children) {
-                            for (const child of mainCat.children) {
-                                cats.push({ 
-                                    id: child.id, 
-                                    name: child.name, 
-                                    type: child.type,
-                                    parentName: mainCat.name
-                                });
-                            }
-                        } else {
-                            cats.push({ 
-                                id: mainCat.id, 
-                                name: mainCat.name, 
-                                type: mainCat.type,
-                                parentName: mainCat.name
-                            });
-                        }
+                    let cats = [];
+                    for (let main of data.data) {
+                        if (main.children) { for (let child of main.children) cats.push({ id: child.id, name: child.name, type: child.type, parentName: main.name }); }
+                        else { cats.push({ id: main.id, name: main.name, type: main.type, parentName: main.name }); }
                     }
                     categories = cats;
                     return true;
-                } else if (data.status === -1) {
-                    showToast('Token 已过期，请点击右上角设置更新');
-                    return false;
-                }
+                } else if (data.status === -1) { showToast('Token 过期，请点击⚙️更新'); return false; }
                 return false;
-            } catch (error) {
-                console.error(error);
-                return false;
-            }
+            } catch(e) { console.error(e); return false; }
         }
 
-        // API 请求 - 获取商品（带翻页）
-        async function fetchGoods(categoryId, categoryType) {
-            let allPageGoods = [];
-            let page = 1;
-            const rows = 10;
-            let lastGoodsIds = [];
-            
+        async function fetchGoods(catId, catType) {
+            let goods = [], page = 1, rows = 10, lastIds = [];
             while (true) {
                 try {
-                    const url = `${BASE_URL}/dj-mini/goods?current=${page}&storeId=${STORE_ID}&id=${categoryId}&type=${categoryType}&rows=${rows}&keyword=`;
-                    const response = await fetch(url, { headers: getHeaders() });
-                    const data = await response.json();
+                    const res = await fetch(`${BASE_URL}/dj-mini/goods?current=${page}&storeId=${STORE_ID}&id=${catId}&type=${catType}&rows=${rows}&keyword=`, { headers: getHeaders() });
+                    const data = await res.json();
                     if (data.status !== 200) break;
-                    
-                    const goodsList = data.data?.records || [];
-                    if (goodsList.length === 0) break;
-                    
-                    const currentIds = goodsList.map(g => g.goodsId);
-                    
-                    if (page > 1 && JSON.stringify(currentIds) === JSON.stringify(lastGoodsIds)) {
-                        break;
-                    }
-                    
-                    for (const item of goodsList) {
-                        if (!allPageGoods.some(g => g.id === item.goodsId)) {
-                            allPageGoods.push({
-                                id: item.goodsId,
-                                name: item.goodsName,
-                                price: (item.price || 0) / 100,
-                                unit: item.units || "",
-                                categoryId: categoryId,
-                                categoryName: ""
-                            });
-                        }
-                    }
-                    
-                    lastGoodsIds = [...currentIds];
-                    
-                    if (goodsList.length < rows) break;
-                    page++;
-                    await sleep(300);
-                    
+                    let list = data.data?.records || [];
+                    if (!list.length) break;
+                    let curIds = list.map(g => g.goodsId);
+                    if (page > 1 && JSON.stringify(curIds) === JSON.stringify(lastIds)) break;
+                    for (let item of list) { if (!goods.some(g => g.id === item.goodsId)) goods.push({ id: item.goodsId, name: item.goodsName, price: (item.price || 0) / 100, unit: item.units || "", categoryId: catId }); }
+                    lastIds = [...curIds];
+                    if (list.length < rows) break;
+                    page++; await sleep(300);
                     if (page > 30) break;
-                } catch (error) {
-                    break;
-                }
+                } catch(e) { break; }
             }
-            return allPageGoods;
+            return goods;
         }
 
-        // 获取所有商品
         async function fetchAllGoods() {
-            let totalWithGoods = 0;
             let completed = 0;
             allGoods = [];
-            
-            for (const cat of categories) {
-                let shouldSkip = false;
-                for (const keyword of SKIP_KEYWORDS) {
-                    if (cat.parentName && cat.parentName.includes(keyword)) {
-                        shouldSkip = true;
-                        break;
-                    }
-                }
-                
-                if (shouldSkip) {
-                    completed++;
-                    continue;
-                }
-                
-                const goods = await fetchGoods(cat.id, cat.type);
-                
-                if (goods.length > 0) {
-                    for (const g of goods) {
-                        g.categoryName = cat.name;
-                    }
-                    allGoods.push(...goods);
-                    totalWithGoods++;
-                }
-                
+            for (let cat of categories) {
+                let skip = SKIP_KEYWORDS.some(k => cat.parentName && cat.parentName.includes(k));
+                if (skip) { completed++; continue; }
+                let goods = await fetchGoods(cat.id, cat.type);
+                if (goods.length) { for (let g of goods) g.categoryName = cat.name; allGoods.push(...goods); }
                 completed++;
-                
-                const stats = document.querySelector('.header .stats');
-                if (stats) {
-                    const spans = stats.querySelectorAll('span');
-                    if (spans[0]) spans[0].innerHTML = `📦 ${allGoods.length} 个商品`;
-                    if (spans[1]) spans[1].innerHTML = `📁 ${completed}/${categories.length} 分类`;
-                }
-                
+                let stats = document.querySelector('.header .stats');
+                if (stats) { let spans = stats.querySelectorAll('span'); if (spans[0]) spans[0].innerHTML = `📦 ${allGoods.length} 个商品`; if (spans[1]) spans[1].innerHTML = `📁 ${completed}/${categories.length} 分类`; }
                 await sleep(200);
             }
-            
             return allGoods;
         }
 
-        // 刷新数据
         async function refreshData() {
             if (isLoading) return;
             isLoading = true;
-            const refreshBtn = document.getElementById('refreshBtn');
-            refreshBtn.textContent = '⏳ 正在获取...';
-            refreshBtn.classList.add('disabled');
+            let btn = document.getElementById('refreshBtn');
+            btn.textContent = '⏳ 正在获取...'; btn.classList.add('disabled');
             document.getElementById('goodsGrid').innerHTML = '<div class="loading"><div class="loading-spinner"></div><p>正在获取商品数据...</p></div>';
-            
             try {
-                const success = await fetchCategories();
-                if (!success) throw new Error('获取分类失败');
-                
+                let ok = await fetchCategories();
+                if (!ok) throw new Error('获取分类失败');
                 await fetchAllGoods();
                 saveCache();
                 renderCategories();
                 renderGoods();
-                
-                const stats = document.querySelector('.header .stats');
-                if (stats) {
-                    const spans = stats.querySelectorAll('span');
-                    if (spans[0]) spans[0].innerHTML = `📦 ${allGoods.length} 个商品`;
-                    if (spans[1]) spans[1].innerHTML = `📁 ${categories.length} 个分类`;
-                }
+                updateStats();
                 showToast(`获取成功！共 ${allGoods.length} 个商品`);
-            } catch (error) {
-                document.getElementById('goodsGrid').innerHTML = '<div class="loading"><p>❌ 获取失败，请检查网络或token</p></div>';
-                showToast('获取失败');
-            } finally {
-                isLoading = false;
-                refreshBtn.textContent = '🔄 点击刷新商品数据';
-                refreshBtn.classList.remove('disabled');
-            }
+            } catch(e) { document.getElementById('goodsGrid').innerHTML = '<div class="loading"><p>❌ 获取失败，请检查网络或token</p></div>'; showToast('获取失败'); }
+            finally { isLoading = false; btn.textContent = '🔄 点击刷新商品数据'; btn.classList.remove('disabled'); }
         }
 
         function renderCategories() {
             const container = document.getElementById('categoriesList');
             if (!container) return;
-            container.innerHTML = `<div class="category-tag ${currentCategory === null ? 'active' : ''}" data-cat-id="">全部</div>
-                ${categories.map(cat => `<div class="category-tag ${currentCategory === cat.id ? 'active' : ''}" data-cat-id="${cat.id}">${escapeHtml(cat.name)}</div>`).join('')}`;
+            container.innerHTML = '';
+            const allTag = document.createElement('div');
+            allTag.className = `category-tag ${currentCategory === null ? 'active' : ''}`;
+            allTag.setAttribute('data-cat-id', '');
+            allTag.textContent = '全部';
+            container.appendChild(allTag);
+            for (let cat of categories) {
+                const tag = document.createElement('div');
+                tag.className = `category-tag ${currentCategory === cat.id ? 'active' : ''}`;
+                tag.setAttribute('data-cat-id', cat.id);
+                tag.textContent = cat.name;
+                container.appendChild(tag);
+            }
             document.querySelectorAll('.category-tag').forEach(el => {
                 el.addEventListener('click', () => {
-                    currentCategory = el.dataset.catId === "" ? null : parseInt(el.dataset.catId);
+                    let id = el.dataset.catId;
+                    currentCategory = id === "" ? null : parseInt(id);
                     renderCategories();
                     renderGoods();
                 });
@@ -1377,82 +747,28 @@
         function renderGoods() {
             const grid = document.getElementById('goodsGrid');
             let filtered = [...allGoods];
-            
-            if (currentCategory) {
-                filtered = filtered.filter(g => g.categoryId === currentCategory);
-            }
-            if (currentKeyword) {
-                filtered = filtered.filter(g => g.name.includes(currentKeyword));
-            }
-            if (matchKeyword) {
-                filtered = filtered.filter(g => isMatchRecipe(g.name));
-            }
-            
-            if (filtered.length === 0) {
-                grid.innerHTML = '<div class="loading"><p>暂无商品</p></div>';
-                return;
-            }
-            
-            grid.innerHTML = filtered.map(goods => `
-                <div class="goods-card">
-                    <div class="goods-image">🛍️</div>
-                    <div class="goods-info">
-                        <div class="goods-name">${escapeHtml(goods.name)}</div>
-                        <div class="goods-price">¥${goods.price.toFixed(2)}</div>
-                        <button class="add-cart-btn" data-id="${goods.id}" data-name="${escapeHtml(goods.name)}" data-price="${goods.price}">➕ 加入购物车</button>
-                    </div>
-                </div>
-            `).join('');
-            
-            document.querySelectorAll('.add-cart-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    addToCart({
-                        id: parseInt(btn.dataset.id),
-                        name: btn.dataset.name,
-                        price: parseFloat(btn.dataset.price)
-                    });
-                });
-            });
+            if (currentCategory) filtered = filtered.filter(g => g.categoryId === currentCategory);
+            if (currentKeyword) filtered = filtered.filter(g => g.name.includes(currentKeyword));
+            if (matchKeyword) filtered = filtered.filter(g => isMatchRecipe(g.name));
+            if (!filtered.length) { grid.innerHTML = '<div class="loading"><p>暂无商品</p></div>'; return; }
+            grid.innerHTML = filtered.map(g => `<div class="goods-card"><div class="goods-image">🛍️</div><div class="goods-info"><div class="goods-name">${escapeHtml(g.name)}</div><div class="goods-price">¥${g.price.toFixed(2)}</div><button class="add-cart-btn" data-id="${g.id}" data-name="${escapeHtml(g.name)}" data-price="${g.price}">➕ 加入购物车</button></div></div>`).join('');
+            document.querySelectorAll('.add-cart-btn').forEach(btn => btn.addEventListener('click', () => addToCart({ id: parseInt(btn.dataset.id), name: btn.dataset.name, price: parseFloat(btn.dataset.price) })));
         }
 
         function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
-        function escapeHtml(text) { const div = document.createElement('div'); div.textContent = text; return div.innerHTML; }
-        
+        function escapeHtml(t) { let d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
         let toastTimer;
-        function showToast(message, duration = 1500) {
-            const existing = document.querySelector('.toast');
-            if (existing) existing.remove();
-            const toast = document.createElement('div');
-            toast.className = 'toast';
-            toast.textContent = message;
-            document.body.appendChild(toast);
-            clearTimeout(toastTimer);
-            toastTimer = setTimeout(() => toast.remove(), duration);
-        }
+        function showToast(m, d = 1500) { let existing = document.querySelector('.toast'); if (existing) existing.remove(); let t = document.createElement('div'); t.className = 'toast'; t.textContent = m; document.body.appendChild(t); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.remove(), d); }
 
-        // 侧边栏控制
         function openCart() { document.getElementById('cartSidebar').classList.add('open'); overlay.classList.add('show'); }
         function closeCart() { document.getElementById('cartSidebar').classList.remove('open'); overlay.classList.remove('show'); }
         function openRecipe() { document.getElementById('recipeSidebar').classList.add('open'); overlay.classList.add('show'); }
         function closeRecipe() { document.getElementById('recipeSidebar').classList.remove('open'); overlay.classList.remove('show'); }
-        
-        // 设置弹窗控制
-        function openSettings() { 
-            document.getElementById('settingsModal').classList.add('show'); 
-            overlay.classList.add('show');
-            document.getElementById('tokenInput').value = currentHeaders.authorization;
-        }
-        function closeSettings() { 
-            document.getElementById('settingsModal').classList.remove('show'); 
-            overlay.classList.remove('show');
-        }
+        function openSettings() { document.getElementById('settingsModal').classList.add('show'); overlay.classList.add('show'); }
+        function closeSettings() { document.getElementById('settingsModal').classList.remove('show'); overlay.classList.remove('show'); }
 
-        // 事件绑定
         document.getElementById('refreshBtn').addEventListener('click', refreshData);
-        document.getElementById('searchInput').addEventListener('input', (e) => { 
-            currentKeyword = e.target.value; 
-            renderGoods(); 
-        });
+        document.getElementById('searchInput').addEventListener('input', e => { currentKeyword = e.target.value; renderGoods(); });
         document.getElementById('cartBtn').addEventListener('click', openCart);
         document.getElementById('cartClose').addEventListener('click', closeCart);
         document.getElementById('recipeBtn').addEventListener('click', openRecipe);
@@ -1468,17 +784,12 @@
         document.getElementById('editCancel').addEventListener('click', closeEditModal);
         document.getElementById('editSave').addEventListener('click', saveEdit);
 
-        // 初始化
         loadToken();
         loadCache();
         loadCart();
         loadRecipes();
-        if (allGoods.length === 0) {
-            setTimeout(() => showToast('点击上方按钮刷新商品数据'), 500);
-        } else {
-            renderCategories();
-            renderGoods();
-        }
+        if (allGoods.length === 0) { setTimeout(() => showToast('点击上方按钮刷新商品数据'), 500); }
+        else { renderCategories(); renderGoods(); }
     </script>
 </body>
 </html>
